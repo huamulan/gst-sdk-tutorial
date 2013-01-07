@@ -15,3 +15,8 @@
 *.exe
 *.out
 *.app
+
+tags
+bin/
+obj/
+.gitignore

@@ -1,0 +1,10 @@
+
+gst-launch-0.10 videotestsrc ! ffmpegcolorspace ! autovideosink
+
+gst-launch-0.10 souphttpsrc location=http://docs.gstreamer.com/media/sintel_trailer-480p.webm ! matroskademux name=d d.video_00 ! matroskamux ! filesink location=sintel_video.mkv
+
+gst-launch-0.10 souphttpsrc location=http://docs.gstreamer.com/media/sintel_trailer-480p.webm ! matroskademux name=d d.audio_00 ! vorbisparse ! matroskamux ! filesink location=sintel_audio.mka
+
+gst-launch-0.10 souphttpsrc location=http://docs.gstreamer.com/media/sintel_trailer-480p.webm ! matroskademux ! filesink location=test
+
+gst-discoverer-0.10 -v http://docs.gstreamer.com/media/sintel_trailer-480p.webm
